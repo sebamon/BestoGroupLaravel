@@ -1,0 +1,45 @@
+<h3>Ubicación</h3>
+        <p>
+            El Bolsón está situado en el Oeste de la Provincia de Río Negro (casi en su límite con Chubut), a sólo 7 kilómetros de la frontera con Chile.
+        </p>
+        <p>
+            Se encuentra sobre el recorrido de la Ruta 40 Sur (ex 258), totalmente asfaltada, casi a mitad de camino entre Bariloche, que está a 120 kilómetros al Norte, y la ciudad de Esquel, 170 kilómetros más al Sur.
+        </p>
+        <h3>Cómo Llegar</h3>
+        <h4>Automóvil</h4>
+        <p>
+            <span class=fw-bold>Desde el Norte:</span> por cualquier ruta hasta Bariloche (el camino más corto desde Buenos Aires es el que va por ruta 5, pasando por Santa Rosa). Desde Bariloche, por la Ruta 40 Sur (ex 258), hacia el Sur, 120 km de asfaltado.
+        </p>
+        <p>
+            <span class=fw-bold>Desde el sur:</span> por cualquier ruta hasta Esquel. Desde Esquel, por ruta 40, en la bifurcación que se encuentra a 10 km de la ciudad, doblar a la izquierda, hacia "El Maitén". Son 180 km de asfalto y se pasa por Epuyén y El Hoyo.
+        </p>
+        <p>
+            Otra opción desde el Sur es la Ruta Provincial Nº 71; son 200 km entre Esquel y El Bolsón, la mayor parte de ripio. Esta ruta permite recorrer el Parque Nacional Los Alerces y es el acceso a Cholila.
+        </p>
+        <h4>Colectivo</h4>
+        <p>
+            <span class=fw-bold>Desde el Norte:</span> por cualquier empresa hasta Bariloche. Desde Bariloche parten ómnibus a El Bolsón con varias frecuencias diarias de las empresas Vía Bariloche, Andesmar, Don Otto, TAC y Mar y Valle. Terminal de Ómnibus de Bariloche: 02944-432860.
+        </p>
+        <p>
+            <span class=fw-bold>Desde el sur:</span> por cualquier empresa hasta Esquel. Desde Esquel parten ómnibus a El Bolsón con varias frecuencias diarias de las empresas Vía Bariloche, Andesmar, Don Otto, Mar y Valle y TAC, por la Ruta 40 Sur. Terminal de Ómnibus de Esquel: 02945-451584.
+        </p>
+        <p>
+            Por la Ruta Provincial Nº 71 existen varias frecuencias semanales de colectivos por la empresa Transporte Esquel.
+        </p>
+        <p>
+            <span class=fw-bold>Desde Chile:</span> Existen varias frecuencias diarias de colectivos hacia Puerto Montt, Osorno y Valdivia por la empresa Andesmar.
+        </p>
+        <h4>Tren</h4>
+        <p>
+            El tren llega hasta Bariloche, con 2 servicios semanales entre Bariloche y Viedma, los jueves y domingos. Estación de Trenes de Bariloche: 02944-423172.
+        </p>
+        <h4>Avión</h4>
+        <p>
+            <span class=fw-bold>Los aeropuertos más cercanos son los de:</span>
+        </p>
+        <p>
+            <span class=fw-bold>Bariloche (BRC):</span> vuelos diarios desde Bs. As. y otras ciudades del país y exterior, principalmente charters provenientes de Brasil, Uruguay y Chile. Compañías Aéreas: Aerolíneas Argentinas / Austral, LADE, LAN y TAM. Aeropuerto: 02944-426162.
+        </p>
+        <p>
+            <span class=fw-bold>Esquel (EQS):</span> vuelos de cabotaje de las líneas aéreas LADE y Aerolíneas Argentinas / Austral Aeropuerto: 02945-451676
+        </p>

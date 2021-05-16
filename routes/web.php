@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Prueba con TP2ej2.php para cargar Bootstrap y contenidos de public:
+Route::get('/ejemplo', function () {
+    return view('TP2/TP2ej2');
+});
+Route::redirect('/tabs', '/TP2/tabs');
