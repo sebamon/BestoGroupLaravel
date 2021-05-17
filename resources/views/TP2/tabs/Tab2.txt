@@ -1,0 +1,10 @@
+<h3>Clima</h3>
+        <p>
+            Este fértil valle está ubicado a un promedio de 340 metros sobre el nivel del mar, en el paralelo 42º S, recostada sobre la Cordillera de los Andes.
+        </p>
+        <p>
+            La presencia del cordón montañoso al Oeste y las estribaciones pedemontanas hacia el Este le otorgan un clima muy favorable, con días largos y soleados en verano y temperaturas agradables en otoño y primavera.
+        </p>
+        <p>
+            En invierno, la temperatura es moderada, con abundantes precipitaciones en forma de lluvia y nieve, todo lo cual permite múltiples actividades durante todo el año.
+        </p>
