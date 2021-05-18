@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('busqueda', [BusquedaController::class,'index'])->name('busqueda.index');
+//Route::resource('/busqueda', [BusquedaController::class]);
 
 //Route::get('/busqueda','BusquedaController@index');
-Route::get('busqueda',[BusquedaController::class,'index']/*->name('busqueda.index')*/);
-Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
+ Route::get('busqueda',[BusquedaController::class,'index'])->name('busqueda.index');
+ Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
 
 // Prueba con TP2ej2.php para cargar Bootstrap y contenidos de public:
 // Route::get('/ejemplo', function () {
