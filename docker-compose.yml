@@ -38,13 +38,13 @@ services:
             - sail
         healthcheck:
           test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
-    phpmyadmin:
-        image: phpmyadmin
-        restart: always
-        ports:
-          - 8080:80
-        environment:
-          - PMA_ARBITRARY=1
+    # phpmyadmin:
+    #     image: phpmyadmin
+    #     restart: always
+    #     ports:
+    #       - 8080:80
+    #     environment:
+    #       - PMA_ARBITRARY=1
     redis:
         image: 'redis:alpine'
         ports:

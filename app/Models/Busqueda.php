@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rubros extends Model
+class Busqueda extends Model
 {
-    protected $table='rubros';
+    protected $table='busquedas';
 
-    protected $primaryKey='idRubro';
-    protected $fillable= array('descripcion');
+    protected $primaryKey='idBusqueda';
+    protected $fillable= array('idRubro','empresa','titulo','descripcion');
     protected $hidden = ['created_at','updated_at'];
+
     use HasFactory;
 }

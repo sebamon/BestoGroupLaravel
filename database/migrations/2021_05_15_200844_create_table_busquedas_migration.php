@@ -14,7 +14,11 @@ class CreateTableBusquedasMigration extends Migration
     public function up()
     {
         Schema::create('busquedas', function (Blueprint $table) {
-            $table->id();
+            $table->id('idBusqueda');
+            $table->integer('idRubro');
+            $table->text('empresa');
+            $table->text('titulo');
+            $table->text('descripcion');
             $table->timestamps();
         });
     }
