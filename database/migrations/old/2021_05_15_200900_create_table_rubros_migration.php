@@ -13,6 +13,7 @@ class CreateTableRubrosMigration extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('rubros');
         Schema::create('rubros', function (Blueprint $table) {
             $table->id('idRubro');
             $table->string('descripcion');

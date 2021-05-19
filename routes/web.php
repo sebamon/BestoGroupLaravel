@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BusquedaController;
+use App\Http\Controllers\RubroController;
+use App\Http\Controllers\InscripcionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('/busqueda', [BusquedaController::class]);
+Route::resource('busqueda', BusquedaController::class);
+Route::resource('inscripcion', InscripcionController::class);
+Route::resource('rubro', RubroController::class);
 
 //Route::get('/busqueda','BusquedaController@index');
- Route::get('busqueda',[BusquedaController::class,'index'])->name('busqueda.index');
- Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
+//  Route::get('busqueda',[BusquedaController::class,'index'])->name('busqueda.index');
+//  Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
 
 // Prueba con TP2ej2.php para cargar Bootstrap y contenidos de public:
 // Route::get('/ejemplo', function () {

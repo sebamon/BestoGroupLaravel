@@ -13,6 +13,7 @@ class CreateTableInscripcionesMigration extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('inscripciones');
         Schema::create('inscripciones', function (Blueprint $table) {
             $table->id('idInscripcion');
             $table->integer('idBusqueda');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBusquedasMigration extends Migration
+class CreateTableRubrosMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,8 @@ class CreateTableBusquedasMigration extends Migration
      */
     public function up()
     {
-        Schema::create('busquedas', function (Blueprint $table) {
-            $table->id('idBusqueda');
-            $table->integer('idRubro');
-<<<<<<< HEAD
-            $table->text('empresa');
-            $table->text('titulo');
-=======
-            $table->string('empresa');
-            $table->string('titulo');
->>>>>>> BestoGroupLaravel/ejemplo
+        Schema::create('rubros', function (Blueprint $table) {
+            $table->id('idRubro');
             $table->text('descripcion');
             $table->timestamps();
         });
@@ -35,6 +27,6 @@ class CreateTableBusquedasMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('busquedas');
+        Schema::dropIfExists('rubros');
     }
 }

@@ -18,17 +18,18 @@
   <tbody>
   @foreach($busqueda as $item)
     <tr>
+    <p></p>
       <th scope="row">{{$item->idBusqueda}}</th>
-      <td>{{$item->idRubro}}</td>
+      <!-- <td>{{$item->descripcion}}</td> -->
       <td>{{$item->empresa}}</td>
       <td>{{$item->titulo}}</td>
       <td>{{$item->descripcion}}</td>
-      <td><a href='{{route('busqueda.show',$item)}}'><p>Editar</p></a></td>
+      <td><a href="{{route('busqueda.show',$item)}}"><p>Editar</p></a></td>
     </tr>
     @endforeach
   </tbody>
 </table>
-{{$busqueda->links()}};
+{{$busqueda->links()}}
 </div>
 @endsection
 
