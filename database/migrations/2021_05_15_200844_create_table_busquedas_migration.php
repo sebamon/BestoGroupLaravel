@@ -16,8 +16,13 @@ class CreateTableBusquedasMigration extends Migration
         Schema::create('busquedas', function (Blueprint $table) {
             $table->id('idBusqueda');
             $table->integer('idRubro');
+<<<<<<< HEAD
             $table->text('empresa');
             $table->text('titulo');
+=======
+            $table->string('empresa');
+            $table->string('titulo');
+>>>>>>> BestoGroupLaravel/ejemplo
             $table->text('descripcion');
             $table->timestamps();
         });
