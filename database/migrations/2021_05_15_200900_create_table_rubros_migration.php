@@ -14,7 +14,8 @@ class CreateTableRubrosMigration extends Migration
     public function up()
     {
         Schema::create('rubros', function (Blueprint $table) {
-            $table->id();
+            $table->id('idRubro');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
