@@ -3,7 +3,8 @@
 /*      Fuentes de Google:      */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
-    background:lightblue url(../img/fondo.jpg) fixed center;
+    background:lightblue url(../img/fondoOficina.jpg) fixed center;
+    background-size: cover;
     font-family: 'Noto Sans', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -16,11 +17,6 @@ h1, h2, h3, h4, h5, h6 {
 #pie {
     background: rgba(23, 162, 184, 0.5);
     text-shadow: 2px 2px 8px #000;
-}
-
-/* Para ocultar visibilidad de tabla en ejercicio 5 - Se muestra al cliquear "Listar Alojamientos" */
-#tListaAlojamientos {
-    display: none;
 }
 
 /* Estilo para verificaciones */

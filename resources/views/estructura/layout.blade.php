@@ -38,13 +38,15 @@
     <!-- Bootstrap 5: cambia font-weight-bold por fw-bold -->
     <div class="row shadow-lg border rounded badge-info p-2 my-1 text-light" id=pie>
         <div class="col">
-            <h5>Oficina de Turismo de El Bolsón</h5>
-            <p>
-            Mario J. Guasco y Gral. Roca<br>
-            El Bolsón, Río Negro, Argentina.<br>
-            Cel: 294 449-2604<br>
-            Email: turismo@elbolson.gob.ar
-            </P>
+            <h5>La agencia Empleos TICS desea poder realizar las inscripciones a las búsquedas laborales online.</h5>
+            <ul>
+            Con este objetivo debemos:
+                <li>Listar rubros con un link que nos permitan ver las búsquedas de cada rubro.</li>
+                <li>Mostrar búsquedas laborales por rubro</li>
+                <li>Permitir la inscripción de un postulante a una búsqueda laboral.</li>
+                <li>Mostrar las inscripciones de una búsqueda laboral.</li>
+
+            </ul>
         </div>
         <div class="col">
             <h5>Sebastián Mon<span class="fs-6 fst-italic"> - Leg. 114490</span> </h5>

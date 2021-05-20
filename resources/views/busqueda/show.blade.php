@@ -1,4 +1,4 @@
-@extends('main')
+@extends('../main')
 @section('Contenido')
 <div class="container">
     <h1>Detalle Busqueda</h1>
