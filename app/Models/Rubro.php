@@ -13,4 +13,8 @@ class Rubro extends Model
     protected $fillable= array('descripcion');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;
+
+    public function busqueda(){
+        
+    }
 }

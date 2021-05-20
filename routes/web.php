@@ -18,7 +18,7 @@ use App\Http\Controllers\InscripcionController;
 
 // Bienvenida de Laravel:
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::resource('busqueda', BusquedaController::class);
@@ -38,7 +38,7 @@ Route::get('/buscar', function () {
 //  Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
 
 // Prueba con TP2ej2.php para cargar Bootstrap y contenidos de public:
-Route::get('/ejemplo', function () {
-    return view('TP2/TP2ej2');
-});
-Route::redirect('/tabs', '/TP2/tabs');
+// Route::get('/ejemplo', function () {
+//     return view('TP2/TP2ej2');
+// });
+// Route::redirect('/tabs', '/TP2/tabs');

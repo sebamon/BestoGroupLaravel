@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Rubro;
 class RubroController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class RubroController extends Controller
      */
     public function index()
     {
-        //
+        $rubros = Rubro::all();
+        return view ('rubro.index', compact('rubros'));
     }
 
     /**
@@ -23,7 +24,7 @@ class RubroController extends Controller
      */
     public function create()
     {
-        //
+        return view ('rubro.create');
     }
 
     /**
@@ -34,7 +35,13 @@ class RubroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rubroNuevo = new Rubro;
+        $rubroNuevo->descripcion = $request->descripcion;
+        
+
+        $rubroNuevo->save();
+
+        return back()->with('mensaje', 'Rubro Agregado');
     }
 
     /**
@@ -45,7 +52,7 @@ class RubroController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('rubro.show',['rubro'=>Rubro::findOrFail($id)]);
     }
 
     /**
