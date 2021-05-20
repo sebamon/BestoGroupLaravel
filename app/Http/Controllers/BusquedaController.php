@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use App\Http\Controllers\BusquedaController;
 //use App\Busqueda;
 use App\Models\Busqueda;
+use App\Models\Rubro;
 
 class BusquedaController extends Controller
 {
@@ -28,7 +29,8 @@ class BusquedaController extends Controller
      */
     public function create()
     {
-        //
+        $rubros = Rubro::all();
+        return view('busqueda.create',compact('rubros'));
     }
 
     /**

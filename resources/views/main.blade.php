@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    @yield('menu')
+    @include('menu')
     @yield('Contenido')
     @yield('pie')
 

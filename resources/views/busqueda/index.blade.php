@@ -25,7 +25,10 @@
       <td>{{$item->empresa}}</td>
       <td>{{$item->titulo}}</td>
       <td>{{$item->descripcion}}</td>
-      <td><a href="{{route('busqueda.show',$item)}}"><p>Editar</p></a></td>
+      <td>
+        <a href="{{route('busqueda.show',$item)}}"><p>Ver</p></a>
+        <a href="{{route('busqueda.edit',$item)}}"><p>Editar</p></a>
+      </td>
     </tr>
     @endforeach
   </tbody>
