@@ -25,7 +25,7 @@ class InscripcionController extends Controller
      */
     public function create()
     {
-        //
+        //$busqueda = Busqueda::all($id)
     }
 
     /**
@@ -47,7 +47,8 @@ class InscripcionController extends Controller
      */
     public function show($id)
     {
-        return view('inscripcion.show',['inscripcion'=>Inscripcion::findOrFail($id)]);
+        $inscripcion = Inscripcion::findOrFail($id);
+        return view('inscripcion.show',compact('inscripcion'));
     }
 
     /**
