@@ -3,10 +3,11 @@
 @section('Contenido')
 <div class="container">
 <h1>Busquedas: </h1>
+
+<a href="{{route('busqueda.create')}}" class='btn btn-primary'>+</a>
 <table class="table table-hover border border-primary">
   <thead>
     <tr>
-   <p> {{$busqueda[1]->idRubro}}</p>
       <th scope="col">#</th>
       <th scope="col">Rubro</th>
       <th scope="col">Empresa</th>
@@ -21,7 +22,7 @@
     <p></p>
       <th scope="row">{{$item->idBusqueda}}</th>
       <!-- <td>{{$item->descripcion}}</td> -->
-      <td></td>
+      <td>{{$item->rubro->descripcion}}</td>
       <td>{{$item->empresa}}</td>
       <td>{{$item->titulo}}</td>
       <td>{{$item->descripcion}}</td>

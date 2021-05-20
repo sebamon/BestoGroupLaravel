@@ -63,7 +63,8 @@ class RubroController extends Controller
      */
     public function edit($id)
     {
-        //
+       $rubro = Rubro::findOrFail($id);
+       return view('rubro.edit',compact('rubro'));
     }
 
     /**
@@ -75,7 +76,14 @@ class RubroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $rubroNuevo = Rubro::find($id);
+        $rubroNuevo->descripcion = $request->descripcion;
+        
+
+        $rubroNuevo->save();
+
+        return back()->with('mensaje', 'Rubro Modificado');
     }
 
     /**

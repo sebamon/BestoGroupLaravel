@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Inscripcion;
+use App\Models\Busqueda;
 
 class InscripcionController extends Controller
 {
@@ -25,7 +26,8 @@ class InscripcionController extends Controller
      */
     public function create()
     {
-        //$busqueda = Busqueda::all($id)
+        $busqueda = Busqueda::all();
+        return view('inscripcion.create', compact('busqueda'));
     }
 
     /**
@@ -34,9 +36,17 @@ class InscripcionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+        $inscripcionNueva = new Inscripcion;
+        $inscripcionNueva->idBusqueda = $request->busqueda;
+        $inscripcionNueva->apellido = $request->apellido;
+        $inscripcionNueva->nombre= $request->nombre;
+        $inscripcionNueva->fecha =date("Y-m-d");
+
+        $inscripcionNueva->save();
+        return back()->with('mensaje', 'Inscripcion Agregada');
     }
 
     /**

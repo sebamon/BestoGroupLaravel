@@ -2,7 +2,9 @@
 
 @section('Contenido')
 <div class="container">
-<h1>Busquedas: </h1>
+<h1>Inscripciones: </h1>
+
+<a href="{{route('inscripcion.create')}}" class='btn btn-primary'>+</a>
 <table class="table table-hover border border-primary">
   <thead>
     <tr>

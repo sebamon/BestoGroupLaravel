@@ -17,8 +17,12 @@ class BusquedaController extends Controller
      */
     public function index()
     {
-        // $busqueda = Busqueda::paginate(5);
-        $busqueda = Busqueda::all();
+        //  $busqueda = Busqueda::paginate(3);
+       $busqueda = Busqueda::all();
+        foreach($busqueda as $item)
+        {
+            $item->rubro=Rubro::find($item->idRubro);
+        }
         return view ('busqueda.index', compact('busqueda'));
     }
 
@@ -41,7 +45,16 @@ class BusquedaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevaBusqueda = new Busqueda;
+        $nuevaBusqueda->idRubro=$request->rubro;
+        $nuevaBusqueda->empresa=$request->empresa;
+        $nuevaBusqueda->titulo=$request->titulo;
+        $nuevaBusqueda->descripcion=$request->descripcion;
+
+        $nuevaBusqueda->save();
+
+        return back()->with('mensaje', 'Busqueda Agregada');
+        
     }
 
     /**
