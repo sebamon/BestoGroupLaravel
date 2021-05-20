@@ -3,16 +3,16 @@
 @section('Contenido')
 <div class="container">
 <h1>Busquedas: </h1>
-<table class="table table-hover">
+<table class="table table-hover border border-primary">
   <thead>
     <tr>
+   <p> {{$busqueda[1]->idRubro}}</p>
       <th scope="col">#</th>
       <th scope="col">Rubro</th>
       <th scope="col">Empresa</th>
       <th scope="col">Titulo</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Acciones</th>
-
     </tr>
   </thead>
   <tbody>
@@ -21,6 +21,7 @@
     <p></p>
       <th scope="row">{{$item->idBusqueda}}</th>
       <!-- <td>{{$item->descripcion}}</td> -->
+      <td></td>
       <td>{{$item->empresa}}</td>
       <td>{{$item->titulo}}</td>
       <td>{{$item->descripcion}}</td>
@@ -29,7 +30,6 @@
     @endforeach
   </tbody>
 </table>
-{{$busqueda->links()}}
 </div>
 @endsection
 

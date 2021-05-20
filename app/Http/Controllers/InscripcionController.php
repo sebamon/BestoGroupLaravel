@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Inscripcion;
 
 class InscripcionController extends Controller
 {
@@ -13,7 +14,8 @@ class InscripcionController extends Controller
      */
     public function index()
     {
-        //
+        $inscripciones = Inscripcion::all();
+        return view ('inscripcion.index', compact('inscripciones'));
     }
 
     /**
@@ -45,7 +47,7 @@ class InscripcionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('inscripcion.show',['inscripcion'=>Inscripcion::findOrFail($id)]);
     }
 
     /**

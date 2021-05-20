@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\BusquedaController;
 use App\Http\Controllers\RubroController;
 use App\Http\Controllers\InscripcionController;
-=======
->>>>>>> nose q hice
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +17,8 @@ use App\Http\Controllers\InscripcionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
-<<<<<<< HEAD
 
 Route::resource('busqueda', BusquedaController::class);
 Route::resource('inscripcion', InscripcionController::class);
@@ -37,5 +33,3 @@ Route::resource('rubro', RubroController::class);
 //     return view('TP2/TP2ej2');
 // });
 // Route::redirect('/tabs', '/TP2/tabs');
-=======
->>>>>>> nose q hice

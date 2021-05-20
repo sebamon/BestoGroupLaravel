@@ -11,7 +11,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    @yield('menu')
     @yield('Contenido')
+    @yield('pie')
 
     <!-- Optional JavaScript; choose one of the two! -->
 

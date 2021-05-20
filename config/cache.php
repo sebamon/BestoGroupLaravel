@@ -27,11 +27,7 @@ return [
     | same cache driver to group types of items stored in your caches.
     |
     | Supported drivers: "apc", "array", "database", "file",
-<<<<<<< HEAD
     |            "memcached", "redis", "dynamodb", "null"
-=======
-    |         "memcached", "redis", "dynamodb", "octane", "null"
->>>>>>> nose q hice
     |
     */
 
@@ -92,13 +88,6 @@ return [
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
 
-<<<<<<< HEAD
-=======
-        'octane' => [
-            'driver' => 'octane',
-        ],
-
->>>>>>> nose q hice
     ],
 
     /*

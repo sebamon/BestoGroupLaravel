@@ -18,6 +18,7 @@ class Busqueda extends Model
     use HasFactory;
 
     public function rubro(){
-        return $this->belongsTo(Rubro::class);
+     //   return $this->belongsTo(Rubro::class);
+        return $this->belongsTo(Rubro::class, 'foreign_key');
     }
 }

@@ -16,7 +16,8 @@ class BusquedaController extends Controller
      */
     public function index()
     {
-        $busqueda = Busqueda::paginate(5);
+        // $busqueda = Busqueda::paginate(5);
+        $busqueda = Busqueda::all();
         return view ('busqueda.index', compact('busqueda'));
     }
 
