@@ -10,8 +10,12 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
+<<<<<<< HEAD
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2"
+=======
+        "laravel/tinker": "^2.5"
+>>>>>>> nose q hice
     },
     "require-dev": {
         "facade/ignition": "^2.5",
