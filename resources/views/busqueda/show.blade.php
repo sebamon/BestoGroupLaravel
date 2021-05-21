@@ -1,15 +1,17 @@
-@extends('../main')
-@section('Contenido')
-<div class="container">
-    <h1>Detalle Busqueda</h1>
-        <div class="row">
-            <div class="col col-6">
-               <p>Id: {{$busqueda->idBusqueda}}</p>
-               <p>Empresa: {{$busqueda->empresa}}</p>
-               <p>Titulo: {{$busqueda->titulo}}</p>
-               <p>Descripcion: {{$busqueda->descripcion}}</p>
-            </div>
-        <a href="{{route('busqueda.index')}}"><button class='btn btn-primary'>Atras</button></a>
+@extends('../estructura/layout')
+@section('cuerpo')
+
+<div class="container"><h2 class="text-center mb-4"><i class="fas fa-eye mx-2"></i>Detalle búsqueda:</h2>
+    <a href="{{route('busqueda.index')}}" class='btn btn-info mx-2'><i class="fas fa-left me-2"></i>Volver al listado</a>
+    <hr class=my-4>
+
+    <div class="row"> <!-- Inicio detalle búsqueda -->
+        <div class="col col-6">
+            <p>Id: {{$busqueda->idBusqueda}}</p>
+            <p>Empresa: {{$busqueda->empresa}}</p>
+            <p>Titulo: {{$busqueda->titulo}}</p>
+            <p>Descripcion: {{$busqueda->descripcion}}</p>
         </div>
+    </div> <!-- Fin detalle búsqueda -->
 </div>
 @endsection

@@ -1,29 +1,30 @@
-@extends('main')
+@extends('estructura/layout')
+@section('cuerpo')
 
-@section('Contenido')
 <div class="container">
-<h1>Rubros: </h1>
+    <h2 class="text-center mb-4"><i class="fas fa-list mx-2"></i>Rubros:</h2>
+    <a href="{{route('rubro.create')}}" class='btn btn-info mx-2'><i class="fas fa-plus me-2"></i>Cargar nuevo</a>
+    <hr class=my-4>
 
-<a href="{{route('rubro.create')}}" class='btn btn-primary'>+</a>
-<table class="table table-hover border border-primary">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Rubro</th>
-      <th scope="col">Accion</th>
-    </tr>
-  </thead>
-  <tbody>
-  @foreach($rubros as $rubro)
-    <tr>
-    <p></p>
-      <th scope="row">{{$rubro->idRubro}}</th>
-      <td>{{$rubro->descripcion}}</td>
-      <td><a href="{{route('rubro.show',$rubro)}}"><p>Ver</p></a>
-      <a href="{{route('rubro.edit',$rubro->idRubro)}}"><p>Editar</p></a></td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+    <table class="table table-striped table-hover table-responsive text-center border border-info"> <!-- Inicio tabla rubros -->
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Rubro</th>
+        <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($rubros as $rubro)
+        <tr>
+        <p></p>
+        <th scope="row">{{$rubro->idRubro}}</th>
+        <td>{{$rubro->descripcion}}</td>
+        <td class="d-grid gap-2"><a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a>
+        <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm"><i class="fas fa-pen me-2"></i>Editar</a></td>
+        </tr>
+        @endforeach
+    </tbody>
+    </table> <!-- Fin tabla rubros -->
 </div>
 @endsection

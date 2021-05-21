@@ -16,22 +16,18 @@ use App\Http\Controllers\InscripcionController;
 |
 */
 
-// Bienvenida de Laravel:
-Route::get('/', function () {
-    return view('main');
-});
+// Vistas configuradas:
+Route::redirect('/', '/home');
+Route::view('/home', 'home');
+Route::view('/buscar', 'busqueda/index');
+Route::view('/welcome', 'welcome');
 
+// Carga todos los recursos de cada carpeta:
 Route::resource('busqueda', BusquedaController::class);
 Route::resource('inscripcion', InscripcionController::class);
 Route::resource('rubro', RubroController::class);
 
-// Ejercicio:
-Route::get('/main', function () {
-    return view('main');
-});
-Route::get('/buscar', function () {
-    return view('busqueda/index');
-});
+
 
 //Route::get('/busqueda','BusquedaController@index');
 //  Route::get('busqueda',[BusquedaController::class,'index'])->name('busqueda.index');
