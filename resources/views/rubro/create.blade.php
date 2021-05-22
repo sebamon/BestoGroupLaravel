@@ -1,9 +1,9 @@
-@extends('../estructura/layout')
+@extends('estructura/layout')
 @section('cuerpo')
 
 <div class="container">
     <h2 class="text-center mb-4"><i class="fas fa-plus mx-2"></i>Nuevo rubro:</h2>
-    <a href="{{route('rubro.index')}}" class='btn btn-info mx-2'><i class="fas fa-left me-2"></i>Volver al listado</a>
+    <a href="{{route('rubro.index')}}" class='btn btn-info mx-2'><i class="fas fa-chevron-left me-2"></i>Volver al listado</a>
     <hr class=my-4>
 
     @if (session('mensaje') )
@@ -15,16 +15,17 @@
 
     <form method="POST" action="{{ route('rubro.store') }}"> <!-- Inicio formulario rubro -->
         @csrf
-        <div class="row">
-            <div class="col col-6">
-                <label for="">Descripcion</label>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div class="col">
+                <label for=descripcion class=fw-bold>Descripción</label>
             </div>
-            <div class="col col-6">
-                <input type="text" name='descripcion' placeholder='Rubro' class='form-control mb-2'>
+            <div class="col">
+                <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción'>
             </div>
-
         </div>
-        <button class="btn btn-primary btn-block" type="submit">Agregar</button>
+		<div class="d-flex justify-content-end">
+            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+        </div>
     </form> <!-- Fin formulario rubro -->
 </div>
 

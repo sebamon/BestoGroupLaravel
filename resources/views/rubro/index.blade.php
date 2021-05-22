@@ -11,7 +11,7 @@
         <tr>
         <th scope="col">#</th>
         <th scope="col">Rubro</th>
-        <th scope="col">Accion</th>
+        <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -20,8 +20,9 @@
         <p></p>
         <th scope="row">{{$rubro->idRubro}}</th>
         <td>{{$rubro->descripcion}}</td>
-        <td class="d-grid gap-2"><a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a>
-        <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm"><i class="fas fa-pen me-2"></i>Editar</a></td>
+        <td class="d-grid gap-2">
+            <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a>
+            <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm"><i class="fas fa-pen me-2"></i>Editar</a></td>
         </tr>
         @endforeach
     </tbody>

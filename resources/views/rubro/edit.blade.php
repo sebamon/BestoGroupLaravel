@@ -1,9 +1,9 @@
-@extends('../estructura/layout')
+@extends('estructura/layout')
 @section('cuerpo')
 
 <div class="container">
-    <h2 class="text-center mb-4"><i class="fas fa-eye mx-2"></i>Editar rubro:</h2>
-    <a href="{{route('rubro.index')}}" class='btn btn-info mx-2'><i class="fas fa-left me-2"></i>Volver al listado</a>
+    <h2 class="text-center mb-4"><i class="fas fa-pen mx-2"></i>Editar rubro #{{$rubro->idRubro}}:</h2>
+    <a href="{{route('rubro.index')}}" class='btn btn-info mx-2'><i class="fas fa-chevron-left me-2"></i>Volver al listado</a>
     <hr class=my-4>
 
     @if (session('mensaje') )
@@ -13,21 +13,21 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('rubro.update',$rubro->idRubro)}}">
+    <form name=formRubro id=formRubro method="POST" action="{{ route('rubro.update',$rubro->idRubro) }}"> <!-- Inicio formulario rubro -->
         @csrf
         @method('PUT')
-        <div class="row">
-            <div class="col col-6">
-                <label for="">Descripcion</label>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div class="col">
+                <label for=descripcion class=fw-bold>Descripción</label>
             </div>
-            <div class="col col-6">
-                <input type="text" name='descripcion' placeholder='Rubro' class='form-control mb-2' value='{{$rubro->descripcion}}'>
+            <div class="col">
+                <input type=text class=form-control name=descripcion id=descripcion placeholder='Rubro' value='{{$rubro->descripcion}}'>
             </div>
-
         </div>
-        <button class="btn btn-primary btn-block" type="submit">Agregar</button>
-    </form>
-    <a href="{{route('rubro.index')}}" class='btn btn-secondary'>Volver</a>
+		<div class="d-flex justify-content-end">
+            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Editar</button>
+        </div>
+    </form> <!-- Fin formulario rubro -->
 </div>
 
 @endsection

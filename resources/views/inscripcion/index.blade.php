@@ -10,11 +10,11 @@
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">Busqueda</th>
+        <th scope="col">Búsqueda</th>
         <th scope="col">Fecha</th>
         <th scope="col">Apellido</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Accion</th>
+        <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +26,10 @@
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
-        <td class="d-grid gap-2"><a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a></td>
+        <td class="d-grid gap-2">
+            <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a>
+            <a href="{{route('inscripcion.edit',$item->idInscripcion)}}" class="btn btn-info btn-sm"><i class="fas fa-pen me-2"></i>Editar</a>
+        </td>
         </tr>
         @endforeach
     </tbody>
