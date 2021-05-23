@@ -78,7 +78,12 @@ class BusquedaController extends Controller
     public function edit($id)
     {
         $busqueda=Busqueda::findOrFail($id);
-        return view('busqueda.edit',compact('busqueda'));
+        $rubroSeleccionado=Rubro::find($busqueda->idRubro);
+        $busqueda->rubro=$rubroSeleccionado;
+        $rubros=Rubro::all();
+
+        return view('busqueda.edit',compact('busqueda','rubros'));
+    
     }
 
     /**

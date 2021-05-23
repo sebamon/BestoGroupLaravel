@@ -22,9 +22,11 @@
             </div>
             <div class="col">
                 <select class=form-select name=rubro id=rubro>
-                    <option value=Ninguno disabled selected value>Seleccione una opción...</option>
+                    <option value=Ninguno disabled value>Seleccione una opción...</option>
                     @foreach($rubros as $rubro)
-                        <option value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>
+
+                         <option  value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
+           
                     @endforeach
                 </select>
             </div>
