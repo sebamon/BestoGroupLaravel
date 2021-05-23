@@ -37,7 +37,7 @@ class RubroController extends Controller
     {
         $rubroNuevo = new Rubro;
         $rubroNuevo->descripcion = $request->descripcion;
-        
+
 
         $rubroNuevo->save();
 
@@ -63,8 +63,8 @@ class RubroController extends Controller
      */
     public function edit($id)
     {
-       $rubro = Rubro::findOrFail($id);
-       return view('rubro.edit',compact('rubro'));
+        $rubro = Rubro::findOrFail($id);
+        return view('rubro.edit',compact('rubro'));
     }
 
     /**
@@ -76,10 +76,10 @@ class RubroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $rubroNuevo = Rubro::find($id);
         $rubroNuevo->descripcion = $request->descripcion;
-        
+
 
         $rubroNuevo->save();
 

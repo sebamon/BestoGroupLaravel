@@ -19,22 +19,12 @@ use App\Http\Controllers\InscripcionController;
 // Vistas configuradas:
 Route::redirect('/', '/home');
 Route::view('/home', 'home');
-Route::view('/buscar', 'busqueda/index');
-Route::view('/welcome', 'welcome');
 
 // Carga todos los recursos de cada carpeta:
 Route::resource('busqueda', BusquedaController::class);
 Route::resource('inscripcion', InscripcionController::class);
 Route::resource('rubro', RubroController::class);
 
-
-
 //Route::get('/busqueda','BusquedaController@index');
 //  Route::get('busqueda',[BusquedaController::class,'index'])->name('busqueda.index');
 //  Route::get('busqueda/{id}',[BusquedaController::class,'show'])->name('busqueda.show');
-
-// Prueba con TP2ej2.php para cargar Bootstrap y contenidos de public:
-// Route::get('/ejemplo', function () {
-//     return view('TP2/TP2ej2');
-// });
-// Route::redirect('/tabs', '/TP2/tabs');
