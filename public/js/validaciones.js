@@ -1,6 +1,6 @@
 /* --- Validaciones usando ../js/bootstrap/bootstrapValidator.js ---
  * Documentación bootstrapValidator: https://web.archive.org/web/20140819055124/http://bootstrapvalidator.com/
- * 
+ *
  * Sebastián Mon - Leg. 114490
  * Arian Acevedo - Leg. FAI 1157
  * Agustín Cerda - Leg. 71853
@@ -28,7 +28,7 @@ $(function() {
 
 
 // --- Validaciones TP2ej4 con plugin bootstrapValidator ---
-$('#formContacto').bootstrapValidator({
+$('#formBusqueda, #formInscripcion, #formRubro').bootstrapValidator({
     excluded: [':disabled', ':hidden', ':not(:visible)'],
     feedbackIcons: {
         valid: 'fas fa-check',

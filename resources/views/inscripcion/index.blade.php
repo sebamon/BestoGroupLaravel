@@ -26,9 +26,10 @@
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
-        <td class="d-grid gap-2">
-            <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm"><i class="fas fa-eye me-2"></i>Ver</a>
-            <a href="{{route('inscripcion.edit',$item->idInscripcion)}}" class="btn btn-info btn-sm"><i class="fas fa-pen me-2"></i>Editar</a>
+        <td class="btn-group">
+            <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+            <a href="{{route('inscripcion.edit',$item->idBusqueda)}}" class="btn btn-info btn-sm"><i class="fas fa-pen"></i></a>
+            <a href="{{route('inscripcion.destroy',$item->idBusqueda)}}" class="btn btn-info btn-sm"><i class="fas fa-trash"></i></a>
         </td>
         </tr>
         @endforeach
