@@ -54,7 +54,7 @@ class BusquedaController extends Controller
         $nuevaBusqueda->save();
 
         return back()->with('mensaje', 'Busqueda Agregada');
-        
+
     }
 
     /**
@@ -79,8 +79,6 @@ class BusquedaController extends Controller
     {
         $busqueda=Busqueda::findOrFail($id);
         return view('busqueda.edit',compact('busqueda'));
-
-        
     }
 
     /**
@@ -93,14 +91,14 @@ class BusquedaController extends Controller
     public function update(Request $request, $id)
     {
         $busqueda = Busqueda::find($id);
-        $busqueada->empresa=$request->empresa;
-        $busqueada->titulo=$request->titulo;
-        $busqueada->descripcion=$request->descripcion;
+        $busqueda->empresa=$request->empresa;
+        $busqueda->titulo=$request->titulo;
+        $busqueda->descripcion=$request->descripcion;
         $busqueda->idRubro=$request->rubro;
-       
+
         $busqueda->save();
-        return back()->with('mensaje',' Busqueda Editada');
-        
+        return back()->with('mensaje',' Búsqueda modificada');
+
     }
 
     /**

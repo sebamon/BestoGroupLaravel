@@ -1,12 +1,12 @@
 @extends('estructura/layout')
 @section('cuerpo')
 
-<div class="container table-responsive">
+<div class="container">
     <h2 class="text-center mb-4"><i class="fas fa-list mx-2"></i>Rubros:</h2>
     <a href="{{route('rubro.create')}}" class='btn btn-info mx-2'><i class="fas fa-plus me-2"></i>Cargar nuevo</a>
     <hr class=my-4>
 
-    <table class="table table-striped table-hover text-center border border-info"> <!-- Inicio tabla rubros -->
+    <table class="table table-responsive table-striped table-hover text-center border border-info"> <!-- Inicio tabla rubros -->
     <thead>
         <tr>
         <th scope="col">#</th>
@@ -20,14 +20,10 @@
         <p></p>
         <th scope="row">{{$rubro->idRubro}}</th>
         <td>{{$rubro->descripcion}}</td>
-        <td class="btn-toolbar d-flex justify-content-end">
-            <div class="btn-group me-2">
-                <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-            </div>
-            <div class="btn-group me-2">
-                <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm"><i class="fas fa-pen"></i></a>
-                <a href="{{route('rubro.destroy',$rubro->idRubro)}}" class="btn btn-info btn-sm"><i class="fas fa-trash"></i></a>
-            </div>
+        <td class="btn-group">
+            <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
+            <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>
+            <a href="{{route('rubro.destroy',$rubro->idRubro)}}" class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$rubro->idRubro}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></a>
         </td>
         </tr>
         @endforeach

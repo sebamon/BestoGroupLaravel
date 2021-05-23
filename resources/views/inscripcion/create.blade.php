@@ -15,10 +15,9 @@
 
     <form name=formInscripcion id=formInscripcion method="POST" action="{{route('inscripcion.store')}}" > <!-- Inicio formulario inscripción -->
         @csrf
-
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
-                <label for=busqueda class=fw-bold>Rubro</label>
+                <label for=busqueda class=fw-bold>Inscribirse en...</label>
             </div>
             <div class="col">
                 <select class=form-select name=busqueda id=busqueda>

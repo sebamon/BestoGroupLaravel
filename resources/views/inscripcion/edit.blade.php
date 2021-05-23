@@ -2,7 +2,7 @@
 @section('cuerpo')
 
 <div class="container">
-    <h2 class="text-center mb-4"><i class="fas fa-pen mx-2"></i>Editar inscripción #{{$rubro->idRubro}}:</h2>
+    <h2 class="text-center mb-4"><i class="fas fa-pen mx-2"></i>Editar inscripción #{{$inscripcion->idInscripcion}}:</h2>
     <a href="{{route('inscripcion.index')}}" class='btn btn-info mx-2'><i class="fas fa-chevron-left me-2"></i>Volver al listado</a>
     <hr class=my-4>
 
@@ -13,12 +13,12 @@
     </div>
     @endif
 
-    <form name=formInscripcion id=formInscripcion method="POST" action="{{route('inscripcion.update',$item->idInscripcion)}}" > <!-- Inicio formulario inscripción -->
+    <form name=formInscripcion id=formInscripcion method="POST" action="{{route('inscripcion.update',$inscripcion->idInscripcion)}}" > <!-- Inicio formulario inscripción -->
         @csrf
-
+        @method('PUT')
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
-                <label for=busqueda class=fw-bold>Rubro</label>
+                <label for=busqueda class=fw-bold>Inscribirse en...</label>
             </div>
             <div class="col">
                 <select class=form-select name=busqueda id=busqueda>
@@ -34,7 +34,7 @@
                 <label for=nombre class=fw-bold>Nombre</label>
             </div>
             <div class="col">
-                <input type=text class=form-control name=nombre id=nombre placeholder='Ingrese el nombre'>
+                <input type=text class=form-control name=nombre id=nombre placeholder='Ingrese el nombre' value="{{$inscripcion->nombre}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
@@ -42,11 +42,11 @@
                 <label for=apellido class=fw-bold>Apellido</label>
             </div>
             <div class="col">
-                <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido' value="{{$item->descripcion}}">
+                <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido' value="{{$inscripcion->apellido}}">
             </div>
         </div>
 		<div class="d-flex justify-content-end">
-            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Editar</button>
         </div>
     </form> <!-- Fin formulario inscripción -->
 </div>

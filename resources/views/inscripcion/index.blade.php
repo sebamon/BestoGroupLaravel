@@ -6,7 +6,7 @@
     <a href="{{route('inscripcion.create')}}" class='btn btn-info mx-2'><i class="fas fa-plus me-2"></i>Cargar nuevo</a>
     <hr class=my-4>
 
-    <table class="table table-striped table-hover table-responsive text-center border border-info"> <!-- Inicio tabla inscripciones -->
+    <table class="table table-responsive table-striped table-hover text-center border border-info"> <!-- Inicio tabla inscripciones -->
     <thead>
         <tr>
         <th scope="col">#</th>
@@ -22,14 +22,14 @@
         <tr>
         <p></p>
         <th scope="row">{{$item->idInscripcion}}</th>
-        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->idBusqueda}}</td></a>
+        <td><a href="{{route('busqueda.show',$item->idInscripcion)}}">{{$item->idInscripcion}}</td></a>
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
         <td class="btn-group">
-            <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-            <a href="{{route('inscripcion.edit',$item->idBusqueda)}}" class="btn btn-info btn-sm"><i class="fas fa-pen"></i></a>
-            <a href="{{route('inscripcion.destroy',$item->idBusqueda)}}" class="btn btn-info btn-sm"><i class="fas fa-trash"></i></a>
+            <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
+            <a href="{{route('inscripcion.edit',$item->idInscripcion)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>
+            <a href="{{route('inscripcion.destroy',$item->idInscripcion)}}" class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$item->idInscripcion}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></a>
         </td>
         </tr>
         @endforeach

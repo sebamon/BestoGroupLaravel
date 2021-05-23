@@ -14,7 +14,7 @@
     @endif
 
     <form name=formBusqueda id=formBusqueda action="{{route('busqueda.store')}}" method='POST'> <!-- Inicio formulario búsqueda -->
-    @csrf
+        @csrf
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
                 <label for=rubro class=fw-bold>Rubro</label>
