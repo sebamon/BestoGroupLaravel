@@ -1,47 +1,54 @@
-@extends('main')
-
-@section('Contenido')
+@extends('estructura/layout')
+@section('cuerpo')
 
 <div class="container">
-    <h1>Nueva Inscripcion:</h1>
+    <h2 class="text-center mb-4"><i class="fas fa-plus mx-2"></i>Nueva inscripción:</h2>
+    <a href="{{route('rubro.index')}}" class='btn btn-info mx-2'><i class="fas fa-chevron-left me-2"></i>Volver al listado</a>
+    <hr class=my-4>
+
     @if (session('mensaje') )
-    <div class="alert alert-success">{{ session('mensaje') }}</div>
+    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center m-3 p-3">
+        <i class='fas fa-check-circle mx-2'></i>{{ session('mensaje') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
-    
-        <form method="POST" action="{{route('inscripcion.store')}}"  >
+
+    <form name=formInscripcion id=formInscripcion method="POST" action="{{route('inscripcion.store')}}" > <!-- Inicio formulario inscripción -->
         @csrf
-        
-        <div class="row">
-                <div class="col col-6">
-                    <label for="">Rubro</label>
-                </div>
-                <div class="col col-6">
-                    <select name="busqueda" id="">
+
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div class="col">
+                <label for=busqueda class=fw-bold>Rubro</label>
+            </div>
+            <div class="col">
+                <select class=form-select name=busqueda id=busqueda>
+                    <option value=Ninguno disabled selected value>Seleccione una opción...</option>
                     @foreach($busqueda as $item)
                     <option value="{{($item->idBusqueda)}}">{{$item->titulo}}</option>
                     @endforeach
-                    </select>
-                </div>
+                </select>
             </div>
-            <div class="row">
-                <div class="col col-6">
-                    <label for="">Nombre</label>
-                </div>
-                <div class="col col-6">
-                    <input type="text" name='nombre'>
-                </div>
+        </div>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div class="col">
+                <label for=nombre class=fw-bold>Nombre</label>
             </div>
-            <div class="row">
-                <div class="col col-6">
-                    <label for="">Apellido</label>
-                </div>
-                <div class="col col-6">
-                    <input type="text" name='apellido'>
-                </div>
+            <div class="col">
+                <input type=text class=form-control name=nombre id=nombre placeholder='Ingrese el nombre'>
             </div>
-            <button class="btn btn-primary btn-block" type="submit">Agregar</button>
-        </form>
-        <a href="{{route('inscripcion.index')}}" class='btn btn-secondary'>Volver</a>
+        </div>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div class="col">
+                <label for=apellido class=fw-bold>Apellido</label>
+            </div>
+            <div class="col">
+                <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido'>
+            </div>
+        </div>
+		<div class="d-flex justify-content-end">
+            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+        </div>
+    </form> <!-- Fin formulario inscripción -->
 </div>
 
 @endsection

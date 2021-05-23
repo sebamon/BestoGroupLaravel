@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- 
+<!--
     Programación Web Avanzada 2021
     Trabajo práctico N° 3: Laravel
     @author Arian Acevedo / Sebastián Mon / Agustín Cerda
@@ -8,48 +8,41 @@
 
 <html lang="es">
 <head>
-    <title><?php echo $Titulo?></title>
+    <title>{{$titulo ?? 'Empleos TICS'}}</title>
     <!-- Etiquetas meta requeridas -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Arian Acevedo / Sebastián Mon / Agustín Cerda">
     <!-- Icono web -->
-    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="shortcut icon" href="{{ asset('img/maletin.ico') }}">
     <!-- CSS de Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link href="css/dataTables.bootstrap5.min.css"></link>
-    <link rel="stylesheet" href="css/datatables.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap/bootstrapValidator.min.css">
-    <!-- Jquery -->
-    <script src="js/jquery/jquery.min.js"></script>    
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrapValidator.min.css') }}">
     <!-- Mi estilo: -->
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <!-- Iconos de Font Awesome (link personal) -->
-    <script src="js/FontAwesome.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/FontAwesome.js') }}" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
     <!-- Script para "Buscar en esta página" -->
-    <script src="js/Buscador.js"></script>
-</head>
-<!-- Fin cabecera -->
+    <script src="{{ asset('js/Buscador.js') }}"></script>
+</head><!-- Fin cabecera -->
+
 <body class="container my-3">
     @include("estructura/menu")
-    @yield('contenido')
-<!-- Comienzo pie -->
-<footer class=container>
-    <!-- Bootstrap 5: cambia font-weight-bold por fw-bold -->
+    <main class="container p-2 shadow-lg" id=cuerpo> <!-- Inicio main cuerpo-->
+        @yield('cuerpo')
+    </main> <!-- Fin main cuerpo -->
+
+
+<footer class=container> <!-- Inicio pie -->
     <div class="row shadow-lg border rounded badge-info p-2 my-1 text-light" id=pie>
         <div class="col">
-            <h5>Oficina de Turismo de El Bolsón</h5>
-            <p>
-            Mario J. Guasco y Gral. Roca<br>
-            El Bolsón, Río Negro, Argentina.<br>
-            Cel: 294 449-2604<br>
-            Email: turismo@elbolson.gob.ar
-            </P>
+            <h5>Sebastián Mon<span class="fs-6 fst-italic"> - Leg. 114490</span></h5>
+            <h5>Arian Acevedo<span class="fs-6 fst-italic"> - Leg. FAI-1157</span></h5>
+            <h5>Agustín Cerda<span class="fs-6 fst-italic"> - Leg. 71853</span></h5>
         </div>
         <div class="col">
-            <h5>Sebastián Mon<span class="fs-6 fst-italic"> - Leg. 114490</span> </h5>
-            <h5>Arian Acevedo<span class="fs-6 fst-italic"> - Leg. FAI-1157</span></h5> 
-            <h5>Agustín Cerda<span class="fs-6 fst-italic"> - Leg. 71853</span> </h5>
             <p>
             Trabajo práctico n°3 usando Laravel<br>
             Programación Web Avanzada<br>
@@ -60,18 +53,20 @@
     </div>
 </footer> <!-- Fin pie -->
 
+<!-- Mostrar versión de Laravel y PHP instalados -->
+<div class="ml-4 text-end text-sm text-gray-500 sm:text-right sm:ml-0">
+    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+</div>
+
 <!-- Carga en orden JQuery (en header), Bootstrap+Popper y validador -->
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/bootstrap/bootstrapValidator.js"></script>
-<script src="js/bootstrap/mensajesBVes_ES.js"></script>
+<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap/bootstrapValidator.js') }}"></script>
+<script src="{{ asset('js/bootstrap/mensajesBVes_ES.js') }}"></script>
 
 <!-- Carga scripts propios -->
-<script src="js/confirmarSalir.js"></script>
-<script src="js/validaciones.js"></script>
-<script src="js/volverArriba.js"></script>
-<script src='js/jquery.dataTables.min.js'></script>
-<script src="js/dataTables.bootstrap5.min.js"></script>
-<script src="js/ajax.js"></script>
+<script src="{{ asset('js/confirmarSalir.js') }}"></script>
+<script src="{{ asset('js/validaciones.js') }}"></script>
+<script src="{{ asset('js/volverArriba.js') }}"></script>
 
 <button class="btn btn-info shadow-sm" onclick="irArriba()" id="volverArriba" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 </body>
