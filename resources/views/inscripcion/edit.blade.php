@@ -45,8 +45,13 @@
                 <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido' value="{{$inscripcion->apellido}}">
             </div>
         </div>
-		<div class="d-flex justify-content-end">
-            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Editar</button>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div id="validaciones">
+                <!-- Acá se muestran los mensajes en caso de errores -->
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Editar</button>
+            </div>
         </div>
     </form> <!-- Fin formulario inscripción -->
 </div>

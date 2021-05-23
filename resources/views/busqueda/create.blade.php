@@ -29,31 +29,36 @@
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
-            <div class="col col-6">
+            <div class="col">
                 <label for=empresa class=fw-bold>Empresa</label>
             </div>
-            <div class="col col-6">
+            <div class="col">
                 <input type=text class=form-control name=empresa id=empresa placeholder='Ingrese la empresa'>
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
-            <div class="col col-6">
+            <div class="col">
                 <label for=titulo class=fw-bold>Título</label>
             </div>
-            <div class="col col-6">
+            <div class="col">
                 <input type=text class=form-control name=titulo id=titulo placeholder='Ingrese el título'>
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
-            <div class="col col-6">
+            <div class="col">
                 <label for=descripcion class=fw-bold>Descripción</label>
             </div>
-            <div class="col col-6">
+            <div class="col">
                 <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción'>
             </div>
         </div>
-		<div class="d-flex justify-content-end">
-            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div id="validaciones">
+                <!-- Acá se muestran los mensajes en caso de errores -->
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+            </div>
         </div>
     </form>
 </div> <!-- Fin formulario búsqueda -->

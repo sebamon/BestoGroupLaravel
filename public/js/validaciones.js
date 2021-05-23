@@ -29,6 +29,7 @@ $(function() {
 
 // --- Validaciones TP2ej4 con plugin bootstrapValidator ---
 $('#formBusqueda, #formInscripcion, #formRubro').bootstrapValidator({
+    container: '#validaciones',
     excluded: [':disabled', ':hidden', ':not(:visible)'],
     feedbackIcons: {
         valid: 'fas fa-check',
@@ -36,80 +37,71 @@ $('#formBusqueda, #formInscripcion, #formRubro').bootstrapValidator({
         validating: 'fas fa-refresh'
     },
     fields: {
-        nombreDuenio: {
+        nombre: {
         validators: {
             notEmpty: {
-                message: 'Debe ingresar su nombre y apellido. '
+                message: 'Debe ingresar su nombre. '
             },
             stringLength: {
-                min: 2,
+                min: 3,
                 max: 150,
                 message: 'El nombre debe ser mayor a 3 caracteres. '
+            },
+            regexp: {
+                regexp: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+$/umg,
+                message: 'El nombre contiene números o símbolos no permitidos. '
             }
         }
         },
-        nombreLugar: { // VALIDAR DE FORMA REMOTA CON AJAX (si ya existe): https://web.archive.org/web/20140813104225/http://bootstrapvalidator.com/validators/remote
+        apellido: {
         validators: {
             notEmpty: {
                 message: 'Debe ingresar el nombre de su establecimiento. '
             },
             stringLength: {
-                min: 2,
-                max: 100,
-                message: 'El nombre debe ser mayor a 2 caracteres. '
-            }
-        }
-        },
-        localidad: {
-        validators: {
-            notEmpty: {
-                message: 'Debe ingresar la localidad de su establecimiento. '
-            },
-            stringLength: {
-                min: 2,
-                max: 100,
-                message: 'La localidad debe ser mayor a 2 caracteres. '
-            }
-        }
-        },
-        tipoLugar: {
-        validators: {
-            notEmpty: {
-                message: 'Debe ingresar el tipo de su establecimiento. '
-            },
-            stringLength: {
-                min: 2,
-                max: 100,
-                message: 'El tipo debe ser mayor a 2 caracteres. '
-            }
-        }
-        },
-        telefono: {
-        validators: {
-            notEmpty: {
-                message: 'Debe ingresar su teléfono. '
+                min: 3,
+                max: 150,
+                message: 'El apellido debe ser mayor a 3 caracteres. '
             },
             regexp: {
-                regexp: /^[\+]?[(]?[0-9]{3,4}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{2,6}$/i, // Basado y adaptado de: https://ihateregex.io/expr/phone
-                message: 'El teléfono no tiene un formato válido. No olvide el código de área. '
+                regexp: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]+$/umg,
+                message: 'El apellido contiene números o símbolos no permitidos. '
             }
         }
         },
-        email: {
+        empresa: {
         validators: {
             notEmpty: {
-                message: 'Debe ingresar su email. '
+                message: 'Debe ingresar el nombre de su empresa. '
             },
-            emailAddress: {
-                message: 'El email no tiene un formato válido. '
+            stringLength: {
+                min: 3,
+                max: 150,
+                message: 'La empresa debe ser mayor a 3 caracteres. '
             }
         }
         },
-        web: {
+        titulo: {
         validators: {
-            // Campo opcional
-            uri: {
-                message: 'El sitio web no tiene un formato válido. No olvide incluir http:// ó https://. '
+            notEmpty: {
+                message: 'Debe ingresar el título. '
+            },
+            stringLength: {
+                min: 3,
+                max: 150,
+                message: 'El titulo debe ser mayor a 3 caracteres. '
+            }
+        }
+        },
+        descripcion: {
+        validators: {
+            notEmpty: {
+                message: 'Debe ingresar la descripcion. '
+            },
+            stringLength: {
+                min: 3,
+                max: 150,
+                message: 'La descripcion debe ser mayor a 3 caracteres. '
             }
         }
         }
