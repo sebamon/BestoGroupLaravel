@@ -77,7 +77,10 @@ class BusquedaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $busqueda=Busqueda::findOrFail($id);
+        return view('busqueda.edit',compact('busqueda'));
+
+        
     }
 
     /**
@@ -89,7 +92,15 @@ class BusquedaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $busqueda = Busqueda::find($id);
+        $busqueada->empresa=$request->empresa;
+        $busqueada->titulo=$request->titulo;
+        $busqueada->descripcion=$request->descripcion;
+        $busqueda->idRubro=$request->rubro;
+       
+        $busqueda->save();
+        return back()->with('mensaje',' Busqueda Editada');
+        
     }
 
     /**
@@ -100,7 +111,10 @@ class BusquedaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $busquedaEliminar = App\Busqueda::findOrFail($id);
+        $busquedaEliminar->delete();
+
+    return back()->with('mensaje', 'Busqueda Eliminada');
     }
     public function __invoke()
     {

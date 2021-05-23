@@ -69,7 +69,9 @@ class InscripcionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $inscripcion=Inscripcion::findOrFail($id);
+        return view('inscripcion.edit',compact('inscripcion'));
+
     }
 
     /**
@@ -81,7 +83,14 @@ class InscripcionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inscripcion=Inscripcion::find($id);
+        $inscripcion->nombre=$request->nombre;
+        $inscripcion->apellido=$request->apellido;
+        $inscripcion->idRubro=$request->rubro;
+        $inscripcion->save();
+
+        return back()->with('mensaje', 'Inscripcion editada'); 
+
     }
 
     /**
@@ -92,6 +101,9 @@ class InscripcionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inscripcionEliminar = App\Inscripcion::findOrFail($id);
+        $inscripcionEliminar->delete();
+
+    return back()->with('mensaje', 'Inscripcion Eliminada');
     }
 }

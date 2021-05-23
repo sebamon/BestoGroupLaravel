@@ -94,6 +94,9 @@ class RubroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rubroEliminar = App\Rubro::findOrFail($id);
+        $rubroEliminar->delete();
+
+    return back()->with('mensaje', 'Rubro Eliminado');
     }
 }
