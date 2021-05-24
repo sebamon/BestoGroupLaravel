@@ -15,6 +15,6 @@ class Rubro extends Model
     use HasFactory;
 
     public function busqueda(){
-        
+   
     }
 }

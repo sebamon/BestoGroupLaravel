@@ -25,7 +25,6 @@
     <tbody>
     @foreach($inscripciones as $item)
         <tr>
-        <p>{{$item}}</p>
         <th scope="row">{{$item->idInscripcion}}</th>
         <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->idBusqueda}}</td></a>
         <td>{{$item->fecha}}</td>

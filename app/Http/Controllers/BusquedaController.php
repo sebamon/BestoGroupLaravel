@@ -38,6 +38,8 @@ class BusquedaController extends Controller
         return view('busqueda.index',compact('busqueda','rubro'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

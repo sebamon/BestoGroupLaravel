@@ -16,6 +16,6 @@ class Inscripcion extends Model
     use HasFactory;
     public function busqueda(){
         //   return $this->belongsTo(Rubro::class);
-           return $this->belongsTo(Busqueda::class, 'foreign_key');
+           return $this->hasOne(Busqueda::class, 'foreign_key');
        }
 }

@@ -35,7 +35,7 @@
         <td>{{$item->empresa}}</td>
         <td>{{$item->titulo}}</td>
         <td>{{$item->descripcion}}</td>
-        <td><a href="" class="btn btn-info btn-sm"><i class="fas fa-user"></i></a></td> <!-- LISTAR INSCRIPCIONES PARA TAL ID BUSQUEDA-->
+        <td><a href="{{route('inscripcion.inscripcionBusqueda',$item->idBusqueda)}}" class="btn btn-info btn-sm"><i class="fas fa-user"></i></a></td> <!-- LISTAR INSCRIPCIONES PARA TAL ID BUSQUEDA-->
         <td class="btn-group">
             <a href="{{route('busqueda.show',$item)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
             <a href="{{route('busqueda.edit',$item->idBusqueda)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>

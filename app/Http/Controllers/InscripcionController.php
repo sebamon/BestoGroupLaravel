@@ -22,6 +22,12 @@ class InscripcionController extends Controller
         }
         return view ('inscripcion.index', compact('inscripciones'));
     }
+    public function inscripcionBusqueda($id)
+    {
+        $inscripciones = Inscripcion::get()->where('idBusqueda',$id);
+
+        return view('inscripcion.index',compact('inscripciones'));
+    }
 
     /**
      * Show the form for creating a new resource.
