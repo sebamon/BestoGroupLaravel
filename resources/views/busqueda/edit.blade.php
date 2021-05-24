@@ -24,9 +24,11 @@
                 <select class=form-select name=rubro id=rubro>
                     <option value=Ninguno disabled value>Seleccione una opción...</option>
                     @foreach($rubros as $rubro)
-
-                         <option  value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
-           
+                        @if($busqueda->idRubro == $rubro->idRubro)
+                            <option  selected value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
+                        @else
+                            <option  value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
+                        @endif
                     @endforeach
                 </select>
             </div>

@@ -22,9 +22,13 @@
             </div>
             <div class="col">
                 <select class=form-select name=busqueda id=busqueda>
-                    <option value=Ninguno disabled selected value>Seleccione una opción...</option>
+                    <option value=Ninguno disabled value>Seleccione una opción...</option>
                     @foreach($busqueda as $item)
-                    <option value="{{($item->idBusqueda)}}">{{$item->titulo}}</option>
+                        @if($item->idBusqueda==$inscripcion->idBusqueda)
+                            <option selected value="{{($item->idBusqueda)}}">{{$item->titulo}}</option>
+                        @else
+                            <option  value="{{($item->idBusqueda)}}">{{$item->titulo}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
