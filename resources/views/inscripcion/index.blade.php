@@ -22,7 +22,7 @@
         <tr>
         <p></p>
         <th scope="row">{{$item->idInscripcion}}</th>
-        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->busqueda()->titulo}}</td></a>
+        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->idBusqueda}}</td></a>
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
