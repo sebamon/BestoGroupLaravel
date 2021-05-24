@@ -101,7 +101,11 @@ class RubroController extends Controller
     public function destroy($id)
     {
         $rubroEliminar =Rubro::findOrFail($id);
-        $rubroEliminar->delete();
+        try {
+            $rubroEliminar->delete();
+        } catch (\Exception $ex) {
+            return back()->with('mensaje', 'Algo ocurrió: Es posible que aún hayan búsquedas para este rubro.');
+        }
 
     return back()->with('mensaje', 'Rubro Eliminado');
     }

@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('rubro.store') }}"> <!-- Inicio formulario rubro -->
+    <form name=formRubro id=formRubro method="POST" action="{{ route('rubro.store') }}"> <!-- Inicio formulario rubro -->
         @csrf
         @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center m-3 p-3">

@@ -6,8 +6,8 @@
     <a href="{{route('inscripcion.create')}}" class='btn btn-info mx-2'><i class="fas fa-plus me-2"></i>Cargar nuevo</a>
     <hr class=my-4>
     @if(session('mensaje'))
-        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center m-3 p-3">
-            <i class='fas fa-check-circle mx-2'></i>{{ session('mensaje') }}
+        <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center m-3 p-3">
+            <i class='fas fa-question-circle mx-2'></i>{{ session('mensaje') }}
              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
@@ -26,7 +26,7 @@
     @foreach($inscripciones as $item)
         <tr>
         <th scope="row">{{$item->idInscripcion}}</th>
-        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->idBusqueda}}</td></a>
+        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}" class="btn btn-outline-primary btn-sm">{{$item->idBusqueda}}</a></td>
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
