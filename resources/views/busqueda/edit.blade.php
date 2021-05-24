@@ -57,8 +57,13 @@
                 <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción' value="{{$busqueda->descripcion}}">
             </div>
         </div>
-		<div class="d-flex justify-content-end">
-            <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Agregar</button>
+        <div class="row row-cols-2 g-3 mb-4 form-group">
+            <div id="validaciones">
+                <!-- Acá se muestran los mensajes en caso de errores -->
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-info btn-block" type="submit"><i class="fas fa-check me-2"></i>Editar</button>
+            </div>
         </div>
     </form>
 </div> <!-- Fin formulario búsqueda -->
