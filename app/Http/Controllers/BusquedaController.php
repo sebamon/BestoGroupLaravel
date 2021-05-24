@@ -129,7 +129,7 @@ class BusquedaController extends Controller
      */
     public function destroy($id)
     {
-        $busquedaEliminar = App\Busqueda::findOrFail($id);
+        $busquedaEliminar = Busqueda::findOrFail($id);
         $busquedaEliminar->delete();
 
     return back()->with('mensaje', 'Busqueda Eliminada');

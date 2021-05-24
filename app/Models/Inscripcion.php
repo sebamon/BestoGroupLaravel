@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Busqueda;
 class Inscripcion extends Model
 { 
     protected $table='inscripciones';
@@ -14,4 +14,8 @@ class Inscripcion extends Model
     protected $hidden = ['created_at','updated_at'];
 
     use HasFactory;
+    public function busqueda(){
+        //   return $this->belongsTo(Rubro::class);
+           return $this->belongsTo(Busqueda::class, 'foreign_key');
+       }
 }

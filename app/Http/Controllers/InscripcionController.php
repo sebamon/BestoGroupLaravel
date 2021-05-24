@@ -18,7 +18,7 @@ class InscripcionController extends Controller
         $inscripciones = Inscripcion::all();
         foreach($inscripciones as $inscripcion)
         {
-            $inscripciones->busqueda=Busqueda::find($inscripcion->idBusqueda);
+            $inscripciones->busqueda=Busqueda::find($inscripcion);
         }
         return view ('inscripcion.index', compact('inscripciones'));
     }
@@ -122,9 +122,13 @@ class InscripcionController extends Controller
      */
     public function destroy($id)
     {
-        $inscripcionEliminar = App\Inscripcion::findOrFail($id);
+        $inscripcionEliminar =Inscripcion::findOrFail($id);
         $inscripcionEliminar->delete();
 
     return back()->with('mensaje', 'Inscripcion Eliminada');
+    }
+    public function __invoke()
+    {
+        // ...
     }
 }
