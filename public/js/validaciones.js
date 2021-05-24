@@ -108,4 +108,4 @@ $('#formBusqueda, #formInscripcion, #formRubro').bootstrapValidator({
     }
 });
 // Para cuando se modifique algún campo, advierta antes de salir o recargar la página:
-$('#formContacto').confirmarSalir('');
+$('#formBusqueda, #formInscripcion, #formRubro').confirmarSalir('');

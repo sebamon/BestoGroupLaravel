@@ -15,6 +15,17 @@
 
     <form name=formInscripcion id=formInscripcion method="POST" action="{{route('inscripcion.store')}}" > <!-- Inicio formulario inscripción -->
         @csrf
+        @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center m-3 p-3">
+            <i class='fas fa-times-circle mx-2'></i><h5>Revisa los siguientes datos e inténtalo nuevamente</h5><!-- Valida en servidor y regresa mostrando los siguientes errores -->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
                 <label for=busqueda class=fw-bold>Inscribirse en...</label>
@@ -33,7 +44,7 @@
                 <label for=nombre class=fw-bold>Nombre</label>
             </div>
             <div class="col">
-                <input type=text class=form-control name=nombre id=nombre placeholder='Ingrese el nombre'>
+                <input type=text class=form-control name=nombre id=nombre placeholder='Ingrese el nombre' value="{{old('nombre')}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
@@ -41,7 +52,7 @@
                 <label for=apellido class=fw-bold>Apellido</label>
             </div>
             <div class="col">
-                <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido'>
+                <input type=text class=form-control name=apellido id=apellido placeholder='Ingrese el apellido' value="{{old('apellido')}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">

@@ -15,12 +15,23 @@
 
     <form method="POST" action="{{ route('rubro.store') }}"> <!-- Inicio formulario rubro -->
         @csrf
+        @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center m-3 p-3">
+            <i class='fas fa-times-circle mx-2'></i><h5>Revisa los siguientes datos e inténtalo nuevamente</h5><!-- Valida en servidor y regresa mostrando los siguientes errores -->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
                 <label for=descripcion class=fw-bold>Descripción</label>
             </div>
             <div class="col">
-                <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción'>
+                <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción' value="{{old('descripcion')}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">

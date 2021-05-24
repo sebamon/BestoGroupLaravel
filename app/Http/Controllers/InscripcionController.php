@@ -43,11 +43,18 @@ class InscripcionController extends Controller
 
     public function store(Request $request)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'busqueda' => 'required|exists:App\Models\Busqueda,idBusqueda', // Valida que en la base de datos exista la Búsqueda seleccionada (normalmente ya aparece en el input select)
+            'apellido' => 'required|min:3|max:150',
+            'nombre' => 'required|min:3|max:150'
+        ]);
+
         $inscripcionNueva = new Inscripcion;
         $inscripcionNueva->idBusqueda = $request->busqueda;
         $inscripcionNueva->apellido = $request->apellido;
-        $inscripcionNueva->nombre= $request->nombre;
-        $inscripcionNueva->fecha =date("Y-m-d");
+        $inscripcionNueva->nombre = $request->nombre;
+        $inscripcionNueva->fecha = date("Y-m-d");
 
         $inscripcionNueva->save();
         return back()->with('mensaje', 'Inscripcion Agregada');
@@ -90,13 +97,20 @@ class InscripcionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'busqueda' => 'required|exists:App\Models\Busqueda,idBusqueda', // Valida que en la base de datos exista la Búsqueda seleccionada (normalmente ya aparece en el input select)
+            'apellido' => 'required|min:3|max:150',
+            'nombre' => 'required|min:3|max:150'
+        ]);
+
         $inscripcion=Inscripcion::find($id);
         $inscripcion->nombre=$request->nombre;
         $inscripcion->apellido=$request->apellido;
         $inscripcion->idBusqueda=$request->busqueda;
         $inscripcion->save();
 
-        return back()->with('mensaje', 'Inscripcion editada'); 
+        return back()->with('mensaje', 'Inscripcion editada');
 
     }
 
