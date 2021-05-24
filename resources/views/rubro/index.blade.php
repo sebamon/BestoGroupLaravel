@@ -27,7 +27,7 @@
         <th scope="row">{{$rubro->idRubro}}</th>
         <td>{{$rubro->descripcion}}</td>
         <td class="btn-group">
-            <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
+            <a href="{{route('busqueda.busquedaRubro',$rubro->idRubro)}}"  class="btn btn-secondary btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>            <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
             <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>
             <form action="{{route('rubro.destroy',$rubro->idRubro)}}" method='POST'>
             @csrf

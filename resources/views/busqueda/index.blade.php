@@ -2,7 +2,8 @@
 @section('cuerpo')
 
 <div class="container">
-    <h2 class="text-center mb-4"><i class="fas fa-list mx-2"></i>Búsquedas:</h2>
+    
+    <h2 class="text-center mb-4"><i class="fas fa-list mx-2"></i>Búsquedas @isset($rubro)por {{$rubro->descripcion}}:@endisset</h2>
     <a href="{{route('busqueda.create')}}" class='btn btn-info mx-2'><i class="fas fa-plus me-2"></i>Cargar nuevo</a>
     <hr class=my-4>
     @if(session('mensaje'))
@@ -23,10 +24,11 @@
         <th scope="col">Acciones</th>
         </tr>
     </thead>
+   
     <tbody>
     @foreach($busqueda as $item)
         <tr>
-        <p>{{$item}}</p>
+       
         <th scope="row">{{$item->idBusqueda}}</th>
         <!-- <td>{{$item->descripcion}}</td> -->
         <td>{{$item->rubro->descripcion}}</td>
@@ -62,7 +64,7 @@
 function confirmarBorrar() {
 
 }
-$("#botonBorrar").attr("href", "{{route('busqueda.destroy',$item->idBusqueda)}}")
+//$("#botonBorrar").attr("href", "{{route('busqueda.destroy',$item->idBusqueda)}}")
 </script>
 
 
@@ -81,4 +83,5 @@ $("#botonBorrar").attr("href", "{{route('busqueda.destroy',$item->idBusqueda)}}"
         </div>
     </div>
 </div>
+
 @endsection
