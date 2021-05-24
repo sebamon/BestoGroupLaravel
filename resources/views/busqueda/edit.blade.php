@@ -16,6 +16,17 @@
     <form name=formBusqueda id=formBusqueda action="{{ route('busqueda.update',$busqueda->idBusqueda) }}" method='POST'> <!-- Inicio formulario búsqueda -->
         @csrf
         @method('PUT')
+        @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center m-3 p-3">
+            <i class='fas fa-times-circle mx-2'></i><h5>Revisa los siguientes datos e inténtalo nuevamente</h5><!-- Valida en servidor y regresa mostrando los siguientes errores -->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="row row-cols-2 g-3 mb-4 form-group">
             <div class="col">
                 <label for=rubro class=fw-bold>Rubro</label>
@@ -25,9 +36,9 @@
                     <option value=Ninguno disabled value>Seleccione una opción...</option>
                     @foreach($rubros as $rubro)
                         @if($busqueda->idRubro == $rubro->idRubro)
-                            <option  selected value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
+                            <option selected value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>
                         @else
-                            <option  value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>                                                
+                            <option value="{{$rubro->idRubro}}">{{$rubro->descripcion}}</option>
                         @endif
                     @endforeach
                 </select>
@@ -38,7 +49,7 @@
                 <label for=empresa class=fw-bold>Empresa</label>
             </div>
             <div class="col col-6">
-                <input type=text class=form-control name=empresa id=empresa placeholder='Ingrese la empresa' value="{{$busqueda->empresa}}">
+                <input type=text class=form-control name=empresa id=empresa placeholder='Ingrese la empresa' value="{{old('empresa', $busqueda->empresa)}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
@@ -46,7 +57,7 @@
                 <label for=titulo class=fw-bold>Título</label>
             </div>
             <div class="col col-6">
-                <input type=text class=form-control name=titulo id=titulo placeholder='Ingrese el título' value="{{$busqueda->titulo}}">
+                <input type=text class=form-control name=titulo id=titulo placeholder='Ingrese el título' value="{{old('titulo', $busqueda->titulo)}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">
@@ -54,7 +65,7 @@
                 <label for=descripcion class=fw-bold>Descripción</label>
             </div>
             <div class="col col-6">
-                <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción' value="{{$busqueda->descripcion}}">
+                <input type=text class=form-control name=descripcion id=descripcion placeholder='Ingrese la descripción' value="{{old('descripcion', $busqueda->descripcion)}}">
             </div>
         </div>
         <div class="row row-cols-2 g-3 mb-4 form-group">

@@ -35,12 +35,15 @@ class RubroController extends Controller
      */
     public function store(Request $request)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'descripcion' => 'required|min:3|max:150'
+        ]);
+
         $rubroNuevo = new Rubro;
         $rubroNuevo->descripcion = $request->descripcion;
 
-
         $rubroNuevo->save();
-
         return back()->with('mensaje', 'Rubro Agregado');
     }
 
@@ -76,10 +79,13 @@ class RubroController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'descripcion' => 'required|min:3|max:150'
+        ]);
 
         $rubroNuevo = Rubro::find($id);
         $rubroNuevo->descripcion = $request->descripcion;
-
 
         $rubroNuevo->save();
 

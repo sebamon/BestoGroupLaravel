@@ -45,6 +45,14 @@ class BusquedaController extends Controller
      */
     public function store(Request $request)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'rubro' => 'required|exists:App\Models\Rubro,idRubro', // Valida que en la base de datos exista el Rubro seleccionado (normalmente ya aparece en el input select)
+            'empresa' => 'required|min:3|max:150',
+            'titulo' => 'required|min:3|max:150',
+            'descripcion' => 'required|min:3|max:150'
+        ]);
+
         $nuevaBusqueda = new Busqueda;
         $nuevaBusqueda->idRubro=$request->rubro;
         $nuevaBusqueda->empresa=$request->empresa;
@@ -52,7 +60,6 @@ class BusquedaController extends Controller
         $nuevaBusqueda->descripcion=$request->descripcion;
 
         $nuevaBusqueda->save();
-
         return back()->with('mensaje', 'Busqueda Agregada');
 
     }
@@ -83,7 +90,7 @@ class BusquedaController extends Controller
         $rubros=Rubro::all();
 
         return view('busqueda.edit',compact('busqueda','rubros'));
-    
+
     }
 
     /**
@@ -95,6 +102,14 @@ class BusquedaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Primero valida los campos requeridos. Si algo falla, retorna arreglo $error a la vista:
+        $request->validate([
+            'rubro' => 'required|exists:App\Models\Rubro,idRubro', // Valida que en la base de datos exista el Rubro seleccionado (normalmente ya aparece en el input select)
+            'empresa' => 'required|min:3|max:150',
+            'titulo' => 'required|min:3|max:150',
+            'descripcion' => 'required|min:3|max:150'
+        ]);
+
         $busqueda = Busqueda::find($id);
         $busqueda->empresa=$request->empresa;
         $busqueda->titulo=$request->titulo;
