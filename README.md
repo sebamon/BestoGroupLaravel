@@ -10,10 +10,10 @@ Universidad Nacional del Comahue
 **Integrantes:**
 - Sebastián Mon - Leg. 114490
 - Arian Acevedo - Leg. FAI-1157
-- Agustín Cerda- Leg. 71853
+- Agustín Cerda - Leg. 71853
 
 ## Consigna:
-##### La agencia Empleos TICs desea poder realizar las inscripciones a las búsquedas laborales online.
+**La agencia Empleos TICs desea poder realizar las inscripciones a las búsquedas laborales online.**
 Con este objetivo debemos:
 - Listar rubros con un link que nos permitan ver las búsquedas de cada rubro.
 - Mostrar búsquedas laborales por rubro
