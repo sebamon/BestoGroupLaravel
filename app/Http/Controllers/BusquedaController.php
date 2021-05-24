@@ -26,6 +26,20 @@ class BusquedaController extends Controller
         return view ('busqueda.index', compact('busqueda'));
     }
 
+    public function busquedaRubro($id)
+    {
+        $busqueda = Busqueda::get()->where('idRubro',$id);
+        $rubro = Rubro::find($id);
+         foreach($busqueda as $item)
+         {
+             $item->rubro=Rubro::findOrFail($item->idRubro);
+         }
+        // return view ('busqueda.index',compact('busqueda'));
+        return view('busqueda.index',compact('busqueda','rubro'));
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -129,7 +143,7 @@ class BusquedaController extends Controller
      */
     public function destroy($id)
     {
-        $busquedaEliminar = App\Busqueda::findOrFail($id);
+        $busquedaEliminar = Busqueda::findOrFail($id);
         $busquedaEliminar->delete();
 
     return back()->with('mensaje', 'Busqueda Eliminada');

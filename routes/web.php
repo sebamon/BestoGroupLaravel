@@ -22,6 +22,9 @@ Route::view('/home', 'home');
 
 // Carga todos los recursos de cada carpeta:
 Route::resource('busqueda', BusquedaController::class);
+Route::get('busqueda/rubro/{idRubro}',[BusquedaController::class,'busquedaRubro'])->name('busqueda.busquedaRubro');
+Route::get('inscripciones/busqueda/{idBusqueda}',[InscripcionController::class,'inscripcionBusqueda'])->name('inscripcion.inscripcionBusqueda');
+
 Route::resource('inscripcion', InscripcionController::class);
 Route::resource('rubro', RubroController::class);
 
