@@ -16,6 +16,10 @@ class InscripcionController extends Controller
     public function index()
     {
         $inscripciones = Inscripcion::all();
+        foreach($inscripciones as $inscripcion)
+        {
+            $inscripciones->busqueda=Busqueda::find($inscripcion->idBusqueda);
+        }
         return view ('inscripcion.index', compact('inscripciones'));
     }
 
@@ -70,7 +74,10 @@ class InscripcionController extends Controller
     public function edit($id)
     {
         $inscripcion=Inscripcion::findOrFail($id);
-        return view('inscripcion.edit',compact('inscripcion'));
+        $busqueda = Busqueda::all();
+        $busquedaSeleccionada=Busqueda::find($inscripcion->idBusqueda);
+        $inscripcion->busqueda=$busquedaSeleccionada;
+        return view('inscripcion.edit',compact('inscripcion','busqueda'));
 
     }
 
@@ -86,7 +93,7 @@ class InscripcionController extends Controller
         $inscripcion=Inscripcion::find($id);
         $inscripcion->nombre=$request->nombre;
         $inscripcion->apellido=$request->apellido;
-        $inscripcion->idRubro=$request->rubro;
+        $inscripcion->idBusqueda=$request->busqueda;
         $inscripcion->save();
 
         return back()->with('mensaje', 'Inscripcion editada'); 

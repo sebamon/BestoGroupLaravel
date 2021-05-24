@@ -22,14 +22,18 @@
         <tr>
         <p></p>
         <th scope="row">{{$item->idInscripcion}}</th>
-        <td><a href="{{route('busqueda.show',$item->idInscripcion)}}">{{$item->idInscripcion}}</td></a>
+        <td><a href="{{route('busqueda.show',$item->idBusqueda)}}">{{$item->busqueda()->titulo}}</td></a>
         <td>{{$item->fecha}}</td>
         <td>{{$item->apellido}}</td>
         <td>{{$item->nombre}}</td>
         <td class="btn-group">
             <a href="{{route('inscripcion.show',$item)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
             <a href="{{route('inscripcion.edit',$item->idInscripcion)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>
-            <a href="{{route('inscripcion.destroy',$item->idInscripcion)}}" class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$item->idInscripcion}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></a>
+            <form action="{{route('inscripcion.destroy',$item->idInscripcion)}}">
+                
+                <a href="" type='submit' class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$item->idInscripcion}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></a>
+            </form>
+            
         </td>
         </tr>
         @endforeach

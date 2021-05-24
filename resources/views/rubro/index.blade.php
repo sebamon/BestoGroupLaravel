@@ -23,7 +23,12 @@
         <td class="btn-group">
             <a href="{{route('rubro.show',$rubro)}}" class="btn btn-info btn-sm" title="Mostrar detalles"><i class="fas fa-eye"></i></a>
             <a href="{{route('rubro.edit',$rubro->idRubro)}}" class="btn btn-info btn-sm" title="Editar detalles"><i class="fas fa-pen"></i></a>
-            <a href="{{route('rubro.destroy',$rubro->idRubro)}}" class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$rubro->idRubro}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></a>
+            <form action="{{route('rubro.destroy',$rubro->idRubro)}}" method='POST'>
+            @method('DELETE')
+            @csrf
+                <button type="submit" class="btn btn-info btn-sm" onclick="confirm('¿Está seguro de eliminar el registro #{{$rubro->idRubro}}?');" title="Eliminar registro"><i class="fas fa-trash"></i></button>
+            </form>
+            
         </td>
         </tr>
         @endforeach
