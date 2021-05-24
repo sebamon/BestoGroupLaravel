@@ -144,7 +144,11 @@ class BusquedaController extends Controller
     public function destroy($id)
     {
         $busquedaEliminar = Busqueda::findOrFail($id);
-        $busquedaEliminar->delete();
+        try {
+            $busquedaEliminar->delete();
+        } catch (\Exception $ex) {
+            return back()->with('mensaje', 'Algo ocurrió: Es posible que aún hayan inscripciones para esta búsqueda.');
+        }
 
     return back()->with('mensaje', 'Busqueda Eliminada');
     }
